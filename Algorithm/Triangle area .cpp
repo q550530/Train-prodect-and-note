@@ -4,12 +4,12 @@
 
 using namespace std;
 
-int getArea(int);				//正方形
-int getArea(int, int);			//矩形
-float getArea(float);			//半徑
-float getArea(int, int, int);	//三角形   
+int getArea(int);				
+int getArea(int, int);			
+float getArea(float);			
+float getArea(int, int, int);	 
 
-int main(array<System::String ^> ^args)
+int main()
 {
 	cout << "正方形 : " << getArea(5) << endl;
 	cout << "矩形形 : " << getArea(5, 6) << endl;
@@ -30,7 +30,7 @@ float getArea(float r){
 	return (3.14 * r * r);
 }
 float getArea(int a, int b, int c){
-	//任意兩邊和大於第三邊
+	
 	if(a + b > c && b + c > a && c + a > b){
 		//海龍公式
 		float s = (a+b+c)/2.0f;
