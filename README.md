@@ -5,6 +5,7 @@
 2. struct 結構
 3. class 類別
 4. typedef 重新定義型態名稱
+5. union 共用結構
  * enum 列舉
 ```
 #define empty 0
@@ -51,6 +52,19 @@ int main () {
  person.age = 21;
 }
 ```
+*  union 共用結構
+```
+union data{
+ char c;
+ int num;
+ double fnum;
+};
+union data a, b;
+```
+Note:  
+電腦架構早期記憶體空間比較不足，因此需要使用共用結構讓各變數共用一塊記憶體，union 所需的記憶體空間大小由最大的成員變數決定，例如上述 union 的大小為 8 位元組 (upper bound double)。
+struct 是每個成員變數都配置一段空間，union 則是共用一段記憶體空間。另外，union 需注意記憶體內的排列方式，如 little-endian 方法排列，int 會放在 double 的 byte 3~0 的位置，從而改變 double 讀取時的值。
+
 ---------------------------- 
 **STL 標準樣板函示庫**
 1. 容器 container
