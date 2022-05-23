@@ -4,6 +4,7 @@
 1. enum 列舉
 2. struct 結構
 3. class 類別
+4. typedef 重新定義型態名稱
  * enum 列舉
 ```
 #define empty 0
@@ -36,6 +37,19 @@ public:
 };
 
 CComplex cpxA(2.3, 4.5);
+```
+* typedef 重新定義型態名稱
+```
+typeof struct [structName] {
+ char name[16];
+ int age;
+ struct [structName] *ptr;
+} PERSON;
+
+int main () {
+ PERSON person1 = {"Amy", 20 };
+ person.age = 21;
+}
 ```
 ---------------------------- 
 **STL 標準樣板函示庫**
