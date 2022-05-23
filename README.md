@@ -37,6 +37,36 @@ int const * const foo; // 一個 const pointer，指向 const int 變數。
 
 
  ---------------------------- 
+**bitwise operator**
+ 邏輯上的運算子在 C 中的語法分別如下：  
+AND （&）  
+OR（|）  
+NOT（!）  
+XOR（^）// bit值不一樣為 1  
+complement（~）  
+shift (<<, >>)  
+
+bitwise 的操作常與 "0x" 這種 16 進位表示法，方便轉換操作。  
+ 
+* Normal operator  
+``` 
+unsigned long num_a = 0x00001111;
+unsigned long num_b = 0x00000202;
+unsigned long num_c;
+
+num_c = num_a & (~num_b);
+num_c = num_c | num_b;
+
+cout<<(num_c); // 00001313
+ ```
+* mask method and bitwise opreator
+ ```
+a = a | 7    // 最右側 3 位設為 1，其餘不變。
+a = a & (~7) // 最右側 3 位設為 0，其餘不變。
+a = a ^ 7    // 最右側 3 位執行 NOT operator，其餘不變。
+ ```
+ 
+----------------------------- 
 **C/C++ 使用者自建型別**
 1. enum 列舉
 2. struct 結構
