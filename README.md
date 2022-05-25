@@ -188,6 +188,29 @@ rt_clock 通常是指系統時鐘，它經常被時鐘中斷進行更新。所�
  float getSum(float, float);       
  int getSum(int, int, int);  
  ```
+**Override覆載 : 繼承關係**
+
+1. Override發生在繼承關係間。	
+```
+class Shape
+{  
+    public void getShapeType()  
+    {  
+        return "Shape" ;
+    }  
+}  
+  
+class Triangle : Shape
+{  
+    public void getShapeType()  
+    {  
+        return "Triangle" ;  
+    }  
+}  
+	
+```
+建立一個Class 命名為Shape，並且他有一個public function為getShapeType，此時再建立一個class命名為Triangle，並繼承Shape，這時候改寫從Shape繼承下來的function，如此一來，原本class Shape呼叫getShapeType()的時候會回傳字串"Shape"，而class Triangle繼承Shape並Override getShapeType()，因此變成回傳字串"Triangle"	
+	
 -----------------------------
 **Template 樣板**
  
