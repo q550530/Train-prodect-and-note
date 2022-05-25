@@ -133,6 +133,31 @@ Note:
 struct 是每個成員變數都配置一段空間，union 則是共用一段記憶體空間。另外，union 需注意記憶體內的排列方式，如 little-endian 方法排列，int 會放在 double 的 byte 3~0 的位置，從而改變 double 讀取時的值。
 
 ---------------------------- 
+**Static**  
+(1) 修飾檔案中的global variable：  
+
+使這個變數只有在本檔案中才可以被使用，相同專案中的其他檔案看不到它的存在。  
+
+Note：放在function前也有一樣的作用。 
+
+(2) 修飾function中的local variable：  
+
+此變數一旦經過初始化就會一直存在直到程式結束，跳出function時它也會保持當下的值  
+
+ex. 可用來計算同一個function被呼叫的次數。
+
+Note:只會被初始化一次，並且只有進入function中才看得到這個變數 
+
+(3) 修飾class中的member variable和function：  
+
+variable：會使同一個class的所有實體共用同一個member variable，或者說這個member variable在同一個class的所有實體擁有相同的值。  
+
+一樣只會初始化一次，甚至不需要實體就可呼叫。  
+
+function：static member function不屬於任何一個實體，也是不需要實體就可呼叫，但它只能操作static member variables而已。  
+
+
+
 **volatile**  
 
 由於嵌入式系統常處理 I/O、中斷、即時操作系統 (RTOS) 相關的問題，因此在嵌入式系統開發中 volatile 尤為重要。被 volatile 修飾的變數代表它可能會被不預期的更新，因此告知編譯器不對它涉及的地方做最佳化，並在每次操作它的時候都讀取該變數實體位址上最新的值，而不是讀取暫存器的值。  
