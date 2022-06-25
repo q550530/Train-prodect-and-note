@@ -159,7 +159,15 @@ variable：會使同一個class的所有實體共用同一個member variable，�
 
 function：static member function不屬於任何一個實體，也是不需要實體就可呼叫，但它只能操作static member variables而已。  
 
+**extern**  
+(1) 變數使用前要先宣告(declaration)，C 的 extern 關鍵字，用來表示此變數已經在別處定義(definition)，告知程式到別的地方找尋此變數的定義(可能在同一個檔案或其他檔案),extern是C/C++語言中表明函數和全域變數作用範圍（可見性）的關鍵字，該關鍵字告訴編譯器，其聲明的函數和變數可以在本模組或其它模組中使用。記住，下列語句：  
+```
+extern int a;
+```
+變數a在所有模組中作為一種全域變數只能被定義一次，否則會出現連接錯誤。  
 
+(2)
+ extern 用來標記/引用其他標頭檔的全域變數，這個方法使用的前提是該變數不能為 static，所以Static也有保護該庫的全域變數的味道
 
 **volatile**  
 
