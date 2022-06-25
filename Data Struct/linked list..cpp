@@ -23,7 +23,7 @@ public:
 	void Delete(T x);         // 刪除list中的 int x
 	void Clear();               // 把整串list刪除
 	void Reverse();             // 將list反轉: 7->3->14 => 14->3->
-	friend ostream& operator<<(ostream&, const LinkedList<T>&);
+	
 };
 
 
